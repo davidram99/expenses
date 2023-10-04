@@ -1,6 +1,40 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import { createDatabase, addMoneyTransaction } from '@/db/dbService'
+
+createDatabase()
+const studentA = {
+  concept: 'Gasto',
+  date: '01/01/2023',
+  amount: '9.99',
+  category: 'Comida'
+}
+
+// settimeout
+setTimeout(() => {
+  addMoneyTransaction(studentA)
+}, 3000)
+
+// setTimeout(() => {
+//   getStudent('pandres@pandres.com')
+// }, 5000)
+
+// setTimeout(() => {
+//   getAllStudents()
+// }, 7000)
+
+// setTimeout(() => {
+//   updateStudent('pandres@pandres.com')
+// }, 9000)
+
+// setTimeout(() => {
+//   getAllStudents()
+// }, 11000)
+
+// setTimeout(() => {
+//   removeStudent('pandres@pandres.com')
+// }, 13000)
 </script>
 
 <template>
